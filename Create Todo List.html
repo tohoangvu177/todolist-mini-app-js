@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Todo List</title>
+        <!-- link Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <!-- Input form -->
+        <section class="my-4">
+            <div class="container">
+                <form id="todoFormId">
+                    <div class="mb-3">
+                        <label for="todoText" class="form-label">What are you going to do?</label>
+                        <input type="text" name="todoText" class="form-control" id="todoText" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="my-4">
+            <div class="container">
+                <h1>Create todo by Template</h1>
+
+                <!-- search -->
+                <div class="input-group my-3">
+                    <span class="input-group-text" id="searchTermSpan">Search</span>
+                    <input
+                        id="searchTerm"
+                        type="text"
+                        class="form-control"
+                        aria-label="Username"
+                        aria-describedby="searchTermSpan"
+                    />
+                </div>
+
+                <!-- filter -->
+                <select
+                    id="filterStatus"
+                    class="form-select mb-3"
+                    aria-label="Default select example"
+                >
+                    <option selected value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+                <!-- ul element -->
+                <ul id="todoList" class="todo-List"></ul>
+            </div>
+        </section>
+
+        <!-- Template -->
+        <template id="todoTemplate">
+            <li>
+                <div class="todo alert alert-secondary" role="alert">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="todo__title mb-0">TODO TITLE</p>
+                        <!-- attach event vào button -->
+                        <div class="todo__actions">
+                            <button type="button" class="btn btn-sm btn-warning edit">Edit</button>
+                            <button type="button" class="btn btn-sm btn-success mark-as-done">
+                                Finish
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger remove">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+
+        <ul class="todoList"></ul>
+
+        <script src="./Create Todo List.js"></script>
+        <!-- <script src="./Search Todo List.js"></script> -->
+        <!-- <script src="./Filter Todo List.js"></script> -->
+        <script src="./Persist Filter Todo List.js"></script>
+
+        <!-- link bootstrap -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
